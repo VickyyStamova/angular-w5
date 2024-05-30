@@ -1,0 +1,14 @@
+<div>
+    <input [(ngModel)]="city" placeholder="Enter city">
+    <button (click)="getWeather()">Get Weather</button>
+  </div>
+  
+  <div *ngIf="weatherData">
+    <h2>Weather in {{ city }}</h2>
+    <ul>
+      <li *ngFor="let forecast of weatherData.list">
+        {{ forecast.dt_txt }} - {{ forecast.main.temp }} °C
+      </li>
+    </ul>
+  </div>
+  
